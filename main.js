@@ -4,6 +4,8 @@ function setup()
     canvas.position(110,250);
     video = createCapture(VIDEO)
     video.hide();
+
+    tint_color = '';
 }
 
 function draw()
@@ -23,4 +25,16 @@ function draw()
 
     circle(70,400,100);
     circle(570,400,100);
+
+    tint(tint_color);
+}
+
+function take_snapshot()
+{
+    save('Any_Filter.png');
+}
+
+function filter_tint()
+{
+    tint_color = document.getElementById("color_name").value;
 }
